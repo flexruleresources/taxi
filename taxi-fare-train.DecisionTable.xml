@@ -1,0 +1,978 @@
+<DecisionTable processAll="false" name="DecisionTable1">
+  <Declaration>
+    <Define name="input" direction="In" type="InputFact" assembly="taxi-fare-train.InputOutput.Concept.xml" />
+    <Define name="output" direction="Out" type="OutputFact" assembly="taxi-fare-train.InputOutput.Concept.xml" value="{FareAmount: null}" />
+  </Declaration>
+  <Columns>
+    <Name name="Rule Name" />
+    <Condition name="rate_code" expression="input.RateCode" />
+    <Condition name="trip_time_in_secs" expression="input.TripTimeInSecs" />
+    <Condition name="trip_distance" expression="input.TripDistance" />
+    <Condition name="payment_type" expression="input.PaymentType" />
+    <Condition name="passenger_count" expression="input.PassengerCount" />
+    <Condition name="vendor_id" expression="input.VendorId" />
+    <Action name="fare_amount" expression="output.FareAmount" />
+  </Columns>
+  <Data>
+    <Row>
+      <Value>R1</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&lt;= 1.09</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 0</Value>
+      <Value></Value>
+      <Value>16.8</Value>
+    </Row>
+    <Row>
+      <Value>R2</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&lt;= 1.09</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 0</Value>
+      <Value>VTS</Value>
+      <Value>5.5</Value>
+    </Row>
+    <Row>
+      <Value>R3</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&lt;= 1.09</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 0</Value>
+      <Value>CMT</Value>
+      <Value>5.5</Value>
+    </Row>
+    <Row>
+      <Value>R4</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&lt;= 1.09</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 5</Value>
+      <Value>VTS</Value>
+      <Value>5</Value>
+    </Row>
+    <Row>
+      <Value>R5</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&lt;= 1.09</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 5</Value>
+      <Value>VTS</Value>
+      <Value>5.5</Value>
+    </Row>
+    <Row>
+      <Value>R6</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&lt;= 1.09</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>5</Value>
+    </Row>
+    <Row>
+      <Value>R7</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&lt;= 1.09</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>5</Value>
+    </Row>
+    <Row>
+      <Value>R8</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&lt;= 1.09</Value>
+      <Value>NOC</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>2.5</Value>
+    </Row>
+    <Row>
+      <Value>R9</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&lt;= 1.09</Value>
+      <Value>NOC</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>2.5</Value>
+    </Row>
+    <Row>
+      <Value>R10</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&lt;= 1.09</Value>
+      <Value>DIS</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>2.5</Value>
+    </Row>
+    <Row>
+      <Value>R11</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&lt;= 1.09</Value>
+      <Value>DIS</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>2.5</Value>
+    </Row>
+    <Row>
+      <Value>R12</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&lt;= 1.09</Value>
+      <Value>UNK</Value>
+      <Value>&lt;= 5</Value>
+      <Value>VTS</Value>
+      <Value>4</Value>
+    </Row>
+    <Row>
+      <Value>R13</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&lt;= 1.09</Value>
+      <Value>UNK</Value>
+      <Value>&gt; 5</Value>
+      <Value>VTS</Value>
+      <Value>6</Value>
+    </Row>
+    <Row>
+      <Value>R14</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&gt; 1.09</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>7</Value>
+    </Row>
+    <Row>
+      <Value>R15</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&gt; 1.09</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 1</Value>
+      <Value>VTS</Value>
+      <Value>7</Value>
+    </Row>
+    <Row>
+      <Value>R16</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&gt; 1.09</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>7</Value>
+    </Row>
+    <Row>
+      <Value>R17</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&gt; 1.09</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 1</Value>
+      <Value>VTS</Value>
+      <Value>7</Value>
+    </Row>
+    <Row>
+      <Value>R18</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&gt; 1.09</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>7</Value>
+    </Row>
+    <Row>
+      <Value>R19</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&gt; 1.09</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>7</Value>
+    </Row>
+    <Row>
+      <Value>R20</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&gt; 1.09</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 4</Value>
+      <Value>VTS</Value>
+      <Value>7</Value>
+    </Row>
+    <Row>
+      <Value>R21</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&gt; 1.09</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 4</Value>
+      <Value>VTS</Value>
+      <Value>7</Value>
+    </Row>
+    <Row>
+      <Value>R22</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&gt; 1.09</Value>
+      <Value>DIS</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>8.5</Value>
+    </Row>
+    <Row>
+      <Value>R23</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&gt; 1.09</Value>
+      <Value>DIS</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>9</Value>
+    </Row>
+    <Row>
+      <Value>R24</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&gt; 1.09</Value>
+      <Value>NOC</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>2.5</Value>
+    </Row>
+    <Row>
+      <Value>R25</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&gt; 1.09</Value>
+      <Value>NOC</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>8.5</Value>
+    </Row>
+    <Row>
+      <Value>R26</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&gt; 1.09</Value>
+      <Value>UNK</Value>
+      <Value>&lt;= 5</Value>
+      <Value>VTS</Value>
+      <Value>6.5</Value>
+    </Row>
+    <Row>
+      <Value>R27</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&lt;= 504</Value>
+      <Value>&gt; 1.09</Value>
+      <Value>UNK</Value>
+      <Value>&gt; 5</Value>
+      <Value>VTS</Value>
+      <Value>8</Value>
+    </Row>
+    <Row>
+      <Value>R28</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&lt;= 3.25</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 2</Value>
+      <Value>CMT</Value>
+      <Value>9.5</Value>
+    </Row>
+    <Row>
+      <Value>R29</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&lt;= 3.25</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 2</Value>
+      <Value>CMT</Value>
+      <Value>8.5</Value>
+    </Row>
+    <Row>
+      <Value>R30</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&lt;= 3.25</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 5</Value>
+      <Value>VTS</Value>
+      <Value>9.5</Value>
+    </Row>
+    <Row>
+      <Value>R31</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&lt;= 3.25</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 5</Value>
+      <Value>VTS</Value>
+      <Value>9</Value>
+    </Row>
+    <Row>
+      <Value>R32</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&lt;= 3.25</Value>
+      <Value>NOC</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>2.5</Value>
+    </Row>
+    <Row>
+      <Value>R33</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&lt;= 3.25</Value>
+      <Value>NOC</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>2.5</Value>
+    </Row>
+    <Row>
+      <Value>R34</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&lt;= 3.25</Value>
+      <Value>DIS</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>2.5</Value>
+    </Row>
+    <Row>
+      <Value>R35</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&lt;= 3.25</Value>
+      <Value>DIS</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>7</Value>
+    </Row>
+    <Row>
+      <Value>R36</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&lt;= 3.25</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 1</Value>
+      <Value>VTS</Value>
+      <Value>9.5</Value>
+    </Row>
+    <Row>
+      <Value>R37</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&lt;= 3.25</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 1</Value>
+      <Value>VTS</Value>
+      <Value>9</Value>
+    </Row>
+    <Row>
+      <Value>R38</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&lt;= 3.25</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 2</Value>
+      <Value>CMT</Value>
+      <Value>9.5</Value>
+    </Row>
+    <Row>
+      <Value>R39</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&lt;= 3.25</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 2</Value>
+      <Value>CMT</Value>
+      <Value>10.5</Value>
+    </Row>
+    <Row>
+      <Value>R40</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&lt;= 3.25</Value>
+      <Value>UNK</Value>
+      <Value>&lt;= 5</Value>
+      <Value>VTS</Value>
+      <Value>9</Value>
+    </Row>
+    <Row>
+      <Value>R41</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&lt;= 3.25</Value>
+      <Value>UNK</Value>
+      <Value>&gt; 5</Value>
+      <Value>VTS</Value>
+      <Value>9.5</Value>
+    </Row>
+    <Row>
+      <Value>R42</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&gt; 3.25</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 5</Value>
+      <Value>VTS</Value>
+      <Value>14.5</Value>
+    </Row>
+    <Row>
+      <Value>R43</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&gt; 3.25</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 5</Value>
+      <Value>CMT</Value>
+      <Value>14</Value>
+    </Row>
+    <Row>
+      <Value>R44</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&gt; 3.25</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 5</Value>
+      <Value>VTS</Value>
+      <Value>17</Value>
+    </Row>
+    <Row>
+      <Value>R45</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&gt; 3.25</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 1</Value>
+      <Value>VTS</Value>
+      <Value>15</Value>
+    </Row>
+    <Row>
+      <Value>R46</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&gt; 3.25</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 1</Value>
+      <Value>VTS</Value>
+      <Value>13.5</Value>
+    </Row>
+    <Row>
+      <Value>R47</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&gt; 3.25</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>14.5</Value>
+    </Row>
+    <Row>
+      <Value>R48</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&gt; 3.25</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>14</Value>
+    </Row>
+    <Row>
+      <Value>R49</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&gt; 3.25</Value>
+      <Value>NOC</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>2.5</Value>
+    </Row>
+    <Row>
+      <Value>R50</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&gt; 3.25</Value>
+      <Value>NOC</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>14</Value>
+    </Row>
+    <Row>
+      <Value>R51</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&gt; 3.25</Value>
+      <Value>DIS</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>17</Value>
+    </Row>
+    <Row>
+      <Value>R52</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&gt; 3.25</Value>
+      <Value>DIS</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>40.5</Value>
+    </Row>
+    <Row>
+      <Value>R53</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&gt; 3.25</Value>
+      <Value>UNK</Value>
+      <Value>&lt;= 5</Value>
+      <Value>VTS</Value>
+      <Value>13</Value>
+    </Row>
+    <Row>
+      <Value>R54</Value>
+      <Value>&lt;= 1</Value>
+      <Value>&gt; 504</Value>
+      <Value>&gt; 3.25</Value>
+      <Value>UNK</Value>
+      <Value>&gt; 5</Value>
+      <Value>VTS</Value>
+      <Value>16.5</Value>
+    </Row>
+    <Row>
+      <Value>R55</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&lt;= 1.9</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 1</Value>
+      <Value>VTS</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R56</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&lt;= 1.9</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 1</Value>
+      <Value>VTS</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R57</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&lt;= 1.9</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R58</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&lt;= 1.9</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R59</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&gt; 1.9</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 1</Value>
+      <Value>VTS</Value>
+      <Value>45</Value>
+    </Row>
+    <Row>
+      <Value>R60</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&gt; 1.9</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 1</Value>
+      <Value>VTS</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R61</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&gt; 1.9</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R62</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&gt; 1.9</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>70</Value>
+    </Row>
+    <Row>
+      <Value>R63</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&lt;= 0.31</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 1</Value>
+      <Value>VTS</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R64</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&lt;= 0.31</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 1</Value>
+      <Value>VTS</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R65</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&lt;= 0.31</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R66</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&lt;= 0.31</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>2.5</Value>
+    </Row>
+    <Row>
+      <Value>R67</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&gt; 0.31</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 2</Value>
+      <Value>VTS</Value>
+      <Value>5.7</Value>
+    </Row>
+    <Row>
+      <Value>R68</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&gt; 0.31</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 2</Value>
+      <Value>VTS</Value>
+      <Value>5</Value>
+    </Row>
+    <Row>
+      <Value>R69</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&gt; 0.31</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R70</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&gt; 0.31</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R71</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&lt;= 0</Value>
+      <Value>NOC</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>20</Value>
+    </Row>
+    <Row>
+      <Value>R72</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&lt;= 0</Value>
+      <Value>NOC</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R73</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&gt; 0</Value>
+      <Value>NOC</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>5</Value>
+    </Row>
+    <Row>
+      <Value>R74</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value>&gt; 0</Value>
+      <Value>NOC</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R75</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value></Value>
+      <Value>DIS</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>75</Value>
+    </Row>
+    <Row>
+      <Value>R76</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value></Value>
+      <Value>DIS</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>55</Value>
+    </Row>
+    <Row>
+      <Value>R77</Value>
+      <Value>&gt; 1</Value>
+      <Value>&lt;= 1258</Value>
+      <Value></Value>
+      <Value>UNK</Value>
+      <Value></Value>
+      <Value></Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R78</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&lt;= 16</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R79</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&lt;= 16</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R80</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&lt;= 16</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 1</Value>
+      <Value>VTS</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R81</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&lt;= 16</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 1</Value>
+      <Value>VTS</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R82</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&lt;= 16</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R83</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&lt;= 16</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R84</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&lt;= 16</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 1</Value>
+      <Value>VTS</Value>
+      <Value>5.7</Value>
+    </Row>
+    <Row>
+      <Value>R85</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&lt;= 16</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 1</Value>
+      <Value>VTS</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R86</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&gt; 16</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 1</Value>
+      <Value>VTS</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R87</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&gt; 16</Value>
+      <Value>CRD</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R88</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&gt; 16</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 1</Value>
+      <Value>VTS</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R89</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&gt; 16</Value>
+      <Value>CSH</Value>
+      <Value>&lt;= 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R90</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&gt; 16</Value>
+      <Value>NOC</Value>
+      <Value>&lt;= 1</Value>
+      <Value></Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R91</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&gt; 16</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R92</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&gt; 16</Value>
+      <Value>CRD</Value>
+      <Value>&gt; 1</Value>
+      <Value>VTS</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R93</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&gt; 16</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 1</Value>
+      <Value>VTS</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R94</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&gt; 16</Value>
+      <Value>CSH</Value>
+      <Value>&gt; 1</Value>
+      <Value>CMT</Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R95</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&gt; 16</Value>
+      <Value>NOC</Value>
+      <Value>&gt; 1</Value>
+      <Value></Value>
+      <Value>52</Value>
+    </Row>
+    <Row>
+      <Value>R96</Value>
+      <Value>&gt; 1</Value>
+      <Value>&gt; 1258</Value>
+      <Value>&gt; 16</Value>
+      <Value>UNK</Value>
+      <Value>&gt; 1</Value>
+      <Value></Value>
+      <Value>52</Value>
+    </Row>
+  </Data>
+</DecisionTable>

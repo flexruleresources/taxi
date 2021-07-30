@@ -1,0 +1,41 @@
+<Concept namespace="TaxiFareTrain.Inputoutput.Concept">
+  <Fact name="InputFact">
+    <Property name="RateCode" type="decimal" isArray="false">
+      <Constraints>
+        <Add type="Required" message="RateCode is required" />
+      </Constraints>
+    </Property>
+    <Property name="TripTimeInSecs" type="decimal" isArray="false">
+      <Constraints>
+        <Add type="Required" message="TripTimeInSecs is required" />
+      </Constraints>
+    </Property>
+    <Property name="TripDistance" type="decimal" isArray="false">
+      <Constraints>
+        <Add type="Required" message="TripDistance is required" />
+      </Constraints>
+    </Property>
+    <Property name="PaymentType" type="string" isArray="false">
+      <Constraints>
+        <Add type="Required" message="PaymentType is required" />
+      </Constraints>
+    </Property>
+    <Property name="PassengerCount" type="decimal" isArray="false">
+      <Constraints>
+        <Add type="Required" message="PassengerCount is required" />
+      </Constraints>
+    </Property>
+    <Property name="VendorId" type="string" isArray="false">
+      <Constraints>
+        <Add type="Required" message="VendorId is required" />
+      </Constraints>
+    </Property>
+  </Fact>
+  <Fact name="OutputFact">
+    <Property name="FareAmount" type="decimal" isArray="false">
+      <Constraints>
+        <Add type="Required" message="FareAmount is required" />
+      </Constraints>
+    </Property>
+  </Fact>
+</Concept>
